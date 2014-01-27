@@ -1,11 +1,26 @@
+/***********************************
+* Autor: Diego Salas
+* Archivo: Ejercicio de arreglos
+* Razon: Por medio de un concurso de bocados, cada participante de la contienda
+* realiza una cantidad de bocados, los cuales serán medidos para obtener así el ganador
+* Fecha creacion: 25/01/2014
+* Última modificacion: 27/01/2014
+***********************************/
+
+//Importes de java necesarios
 import java.io.*;
 
 public class BocadosArreglos{
 	
+        //Objetos de input y output
 	static 	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	static	PrintStream out = System.out;
 
-
+        /***
+         * Clase Main
+         * @param args
+         * @throws java.io.IOException 
+         */
    	public static void main(String[] args)throws java.io.IOException{
    	
    	int cantParticipantes = 10;
@@ -28,7 +43,7 @@ public class BocadosArreglos{
 	
 	nombres = new String[cantParticipantes];
 	
-	bocados = new int[cantBocados];//Arreglo que tiene el tama�o segun al cantidad de bocados por participante
+	bocados = new int[cantBocados];//Arreglo que tiene el tamaño segun al cantidad de bocados por participante
 	pesoBocados = new double[cantParticipantes];//Se define que solo son 10 participantes como mucho
 		
 	/*1.Llenar bocados 
@@ -59,6 +74,11 @@ public class BocadosArreglos{
 	 out.println("El nombre del ganador es: " + nombres[ganador] + "y su bocado mayor fue de: " + pesoBocados[ganador] + "el indice del participante corresponde a: " + ganador );
    	}
    	
+        /***
+         * Llena el arreglo de bocados de cada participante
+         * @param pbocados
+         * @throws java.io.IOException 
+         */
    	static void llenarBocados(int [] pbocados)throws java.io.IOException{
    	
    		int bocado=0;//variable que guarda cada bocado
@@ -72,6 +92,12 @@ public class BocadosArreglos{
    			
    	}
    	
+        /***
+         * Calcula el peso total de los bocados de cada participante
+         * @param pbocados
+         * @return
+         * @throws java.io.IOException 
+         */
    	static double calcularPesoTotal(int [] pbocados) throws java.io.IOException{
    		
    		int bocado;
@@ -92,7 +118,11 @@ public class BocadosArreglos{
    		
    	}
    	
-
+        /***
+         * Obtiene el ganador una vez contabilizados todos los bocados
+         * @param ppesosBocados
+         * @return 
+         */
 	static int obtenerGanador(double [] ppesosBocados){
 		double pesoMayor=0;
 		int ganador=0;
